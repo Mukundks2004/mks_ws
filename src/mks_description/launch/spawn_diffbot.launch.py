@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-
 import os
-
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
@@ -25,10 +22,18 @@ def generate_launch_description():
             os.path.join(ros_gz_sim_pkg, 'launch', 'gz_sim.launch.py')
         ),
         # Pass empty world as gz_args
-        launch_arguments={'gz_args': 'empty.sdf'}.items()
+        launch_arguments={'gz_args': 'empty.sdf --render-engine ogre2'}.items()
     )
 
     return LaunchDescription([
+        # Publish robot_description
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            output='screen',
+            parameters=[{'robot_description': robot_description}]
+        ),
+
         # Gazebo Sim
         gz_sim_launch,
 
@@ -43,11 +48,5 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # Publish robot_description
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            output='screen',
-            parameters=[{'robot_description': robot_description}]
-        ),
+
     ])
