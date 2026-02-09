@@ -73,4 +73,10 @@ compile_commands.json
 
 *.gv
 *.pdf
-*.stl
+
+# Ignore everything in meshes folder
+/src/mks_description/meshes/*
+
+# But do not ignore the simplified_meshes folder and its contents
+!/src/mks_description/meshes/simplified_meshes/
+!/src/mks_description/meshes/simplified_meshes/**
