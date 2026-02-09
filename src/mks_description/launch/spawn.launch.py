@@ -46,9 +46,14 @@ def generate_launch_description():
         ]
     )
 
-    # -------------------------
-    # Optional: Launch empty Ignition world
-    # -------------------------
+    # Launching ignition
+
+    world_path = os.path.join(
+    get_package_share_directory('mks_description'),
+    'worlds',
+    'my_world.sdf'
+    )
+
     ign_launch_file = os.path.join(
         get_package_share_directory('ros_gz_sim'),
         'launch',
@@ -56,7 +61,7 @@ def generate_launch_description():
     )
     launch_ignition = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(ign_launch_file),
-        launch_arguments={'gz_args': 'empty.sdf'}.items()
+        launch_arguments={'gz_args': world_path}.items()
     )
 
     # -------------------------

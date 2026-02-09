@@ -3,7 +3,7 @@
 
     <xacro:arg name="mesh_path" default="package://mks_description/meshes"/>
 
-    <!-- <link name="world" /> -->
+    <link name="root" />
 
 
     <link name="chassis">
@@ -26,11 +26,11 @@
         </inertial>
     </link>
 
-    <!-- <joint name="base_joint" type="fixed">
-        <parent link="world"/>
+    <joint name="base_joint" type="fixed">
+        <parent link="root"/>
         <child link="chassis"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-    </joint> -->
+    </joint>
 
     <link name="front_left_leg">
         <visual>
