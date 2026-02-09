@@ -51,7 +51,7 @@ def generate_launch_description():
     world_path = os.path.join(
     get_package_share_directory('mks_description'),
     'worlds',
-    'my_world.sdf'
+    'mks_world.sdf'
     )
 
     ign_launch_file = os.path.join(
