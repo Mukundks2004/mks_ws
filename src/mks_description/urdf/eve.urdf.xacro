@@ -251,4 +251,16 @@
         <origin xyz="-0.0925 0.387904 -0.009518" rpy="0 0 0"/>
         <axis xyz="1 0 0"/>
     </joint>
+
+
+    <plugin
+        filename="libignition-gazebo-joint-velocity-actuator-system.so"
+        name="WheelVelocity">
+        <joint_name>front_left_wheel_to_leg</joint_name>
+        <vel>1.0</vel>
+    </plugin>
+
+
+
+
 </robot>

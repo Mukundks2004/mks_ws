@@ -49,9 +49,9 @@ def generate_launch_description():
     # Launching ignition
 
     world_path = os.path.join(
-    get_package_share_directory('mks_description'),
-    'worlds',
-    'mks_world.sdf'
+        get_package_share_directory('mks_description'),
+        'worlds',
+        'mks_world.sdf'
     )
 
     ign_launch_file = os.path.join(
