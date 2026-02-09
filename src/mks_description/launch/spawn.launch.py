@@ -16,11 +16,7 @@ def generate_launch_description():
 
 
     pkg_name = 'mks_description'
-    xacro_file = os.path.join(
-        get_package_share_directory(pkg_name),
-        'urdf',
-        'eve.urdf.xacro'
-    )
+    xacro_file = os.path.join(get_package_share_directory(pkg_name), 'urdf', 'eve.urdf.xacro')
 
     # xacro -> urdf string
     robot_description_raw = xacro.process_file(xacro_file, mappings={'mesh_path': mesh_path_for_gazebo}).toxml()
