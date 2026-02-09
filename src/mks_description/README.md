@@ -22,3 +22,6 @@ Should go in `/mks_description/meshes`
 
 You can access them here:
 - https://drive.google.com/drive/folders/1dvsBxLHqj5qetu0XFq9vR1L56kMXGcLv?usp=sharing
+
+## Ignition:
+- empty world: `ign gazebo -v 4 -r empty.sdf`
