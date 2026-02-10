@@ -1,6 +1,7 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, LogInfo, Node
+from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
@@ -9,7 +10,7 @@ def generate_launch_description():
         DeclareLaunchArgument('imu_topic', default_value='/camera/imu/data'),
 
         Node(
-            package='rtabmap_ros',
+            package='rtabmap',
             executable='rtabmap',
             name='rtabmap',
             output='screen',
