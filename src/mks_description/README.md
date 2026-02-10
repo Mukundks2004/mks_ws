@@ -16,6 +16,13 @@
 
 - `ros2 run xacro xacro /home/mksneo/mks_ws/src/mks_description/urdf/eve.urdf.xacro`
 
+OR
+
+- `ros2 run xacro xacro /home/mksneo/mks_ws/src/mks_description/urdf/eve.urdf.xacro > /home/mksneo/mks_ws/src/mks_description/urdf/eve.urdf`
+
+To SDF
+- `gz sdf -p /home/mksneo/mks_ws/src/mks_description/urdf/eve.urdf > /home/mksneo/mks_ws/src/mks_description/sdf/eve.sdf`
+
 ## STL Files
 
 Should go in `/mks_description/meshes` 
@@ -25,3 +32,6 @@ You can access them here:
 
 ## Ignition:
 - empty world: `ign gazebo -v 4 -r empty.sdf`
+
+## Source:
+- https://control.ros.org/humble/doc/gz_ros2_control/doc/index.html

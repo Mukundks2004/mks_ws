@@ -14,13 +14,11 @@ def generate_launch_description():
     mesh_path_for_gazebo = '/home/mksneo/mks_ws/src/mks_description/meshes'
     spawn_height = 10
 
-
     pkg_name = 'mks_description'
     xacro_file = os.path.join(get_package_share_directory(pkg_name), 'urdf', 'eve.urdf.xacro')
 
     # xacro -> urdf string
     robot_description_raw = xacro.process_file(xacro_file, mappings={'mesh_path': mesh_path_for_gazebo}).toxml()
-
 
     node_robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -28,7 +26,6 @@ def generate_launch_description():
         output='screen',
         parameters=[{'robot_description': robot_description_raw}]
     )
-
 
     node_spawn_ignition = Node(
         package='ros_gz_sim',
@@ -43,7 +40,6 @@ def generate_launch_description():
     )
 
     # Launching ignition
-
     world_path = os.path.join(
         get_package_share_directory('mks_description'),
         'worlds',
@@ -55,14 +51,12 @@ def generate_launch_description():
         'launch',
         'gz_sim.launch.py'
     )
+
     launch_ignition = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(ign_launch_file),
         launch_arguments={'gz_args': world_path}.items()
     )
 
-    # -------------------------
-    # Launch Description
-    # -------------------------
     return LaunchDescription([
         launch_ignition,
         node_robot_state_publisher,
