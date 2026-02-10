@@ -1,0 +1,14 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+single_wheel_velocity_controller:
+  ros__parameters:
+    type: velocity_controllers/JointVelocityController
+    joint: "front_left_wheel_to_leg"
+    command_interface: "velocity"
+    min_velocity: -1.0
+    max_velocity: 1.0

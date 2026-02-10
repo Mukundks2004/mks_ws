@@ -8,6 +8,8 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
+find_package(velocity_controllers REQUIRED)
+find_package(controller_manager REQUIRED)
 
 install(DIRECTORY urdf
         DESTINATION share/${PROJECT_NAME})
@@ -16,6 +18,8 @@ install(DIRECTORY meshes
 install(DIRECTORY launch
         DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY worlds
+        DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY config
         DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)

@@ -252,4 +252,24 @@
         <origin xyz="-0.0925 0.387904 -0.009518" rpy="0 0 0"/>
         <axis xyz="1 0 0"/>
     </joint>
+
+    <ros2_control name="GazeboSimSystem" type="system">
+        <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+        <joint name="front_left_wheel_to_leg">
+        <command_interface name="velocity">
+            <param name="min">-1</param>
+            <param name="max">1</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+
+    <gazebo>
+        <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <parameters>$(find mks_description)/config/eve_controller.yaml</parameters>
+        </plugin>
+    </gazebo>
 </robot>

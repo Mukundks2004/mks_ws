@@ -35,3 +35,18 @@ You can access them here:
 
 ## Source:
 - https://control.ros.org/humble/doc/gz_ros2_control/doc/index.html
+
+
+```bash
+ros2 launch gz_ros2_control_demos cart_example_position.launch.py
+ros2 launch gz_ros2_control_demos cart_example_velocity.launch.py
+ros2 launch gz_ros2_control_demos cart_example_effort.launch.py
+```
+
+```bash
+ros2 run gz_ros2_control_demos example_position
+ros2 run gz_ros2_control_demos example_velocity
+ros2 run gz_ros2_control_demos example_effort
+```
+
+https://github.com/ros-controls/gz_ros2_control/tree/rolling/gz_ros2_control_demos
