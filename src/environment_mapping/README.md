@@ -147,6 +147,8 @@ sudo apt install meshlab
 
 ## Steps
 
+Replace `mks` with your name
+
 1) Move file to somewhere accessible:
 ```bash
 mv /home/mks/.ros/rtabmap.db /home/mks/my_map.db
@@ -190,7 +192,6 @@ Run:
 - `sudo apt-get install ros-humble-rtabmap-ros`
 - `sudo apt-get install ros-humble-imu-tools`
 - `ros2 launch environment_mapping rtabmap_realsense.launch.py`
-
 
 
 ## Other:
